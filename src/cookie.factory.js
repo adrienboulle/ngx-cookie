@@ -1,4 +1,5 @@
 "use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var cookie_service_1 = require("./cookie.service");
 function cookieServiceFactory(cookieOptionsProvider) {

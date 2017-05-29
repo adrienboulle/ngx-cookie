@@ -1,27 +1,32 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
+    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    }return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+var __metadata = undefined && undefined.__metadata || function (k, v) {
+    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var cookie_options_provider_1 = require("./cookie-options-provider");
 var utils_1 = require("./utils");
-var CookieService = (function () {
+var CookieService = function () {
     function CookieService(_optionsProvider) {
         this._optionsProvider = _optionsProvider;
         this.options = this._optionsProvider.options;
     }
     Object.defineProperty(CookieService.prototype, "cookieString", {
-        get: function () {
+        get: function get() {
             return document.cookie || '';
         },
-        set: function (val) {
+        set: function set(val) {
             document.cookie = val;
         },
         enumerable: true,
@@ -171,9 +176,6 @@ var CookieService = (function () {
         return str;
     };
     return CookieService;
-}());
-CookieService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [cookie_options_provider_1.CookieOptionsProvider])
-], CookieService);
+}();
+CookieService = __decorate([core_1.Injectable(), __metadata("design:paramtypes", [cookie_options_provider_1.CookieOptionsProvider])], CookieService);
 exports.CookieService = CookieService;

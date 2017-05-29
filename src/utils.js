@@ -1,4 +1,5 @@
 "use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 function isBlank(obj) {
     return obj === undefined || obj === null;
@@ -20,15 +21,14 @@ function mergeOptions(oldOptions, newOptions) {
         path: isPresent(newOptions.path) ? newOptions.path : oldOptions.path,
         domain: isPresent(newOptions.domain) ? newOptions.domain : oldOptions.domain,
         expires: isPresent(newOptions.expires) ? newOptions.expires : oldOptions.expires,
-        secure: isPresent(newOptions.secure) ? newOptions.secure : oldOptions.secure,
+        secure: isPresent(newOptions.secure) ? newOptions.secure : oldOptions.secure
     };
 }
 exports.mergeOptions = mergeOptions;
 function safeDecodeURIComponent(str) {
     try {
         return decodeURIComponent(str);
-    }
-    catch (e) {
+    } catch (e) {
         return str;
     }
 }
@@ -36,8 +36,7 @@ exports.safeDecodeURIComponent = safeDecodeURIComponent;
 function safeJsonParse(str) {
     try {
         return JSON.parse(str);
-    }
-    catch (e) {
+    } catch (e) {
         return str;
     }
 }
